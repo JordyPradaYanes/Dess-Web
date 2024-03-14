@@ -4,18 +4,19 @@ interface Props {
 }
 
 const { title } = Astro.props;
-const items = [{
-	icon:'',
-	name:'Casper'
-},
-{
-	icon:'',
-	name:'Opcion 2'
-},
-{
-	icon:'',
-	name:'Opcion 3'
-}
+const items = [
+	{
+		icon: "",
+		name: "Casper",
+	},
+	{
+		icon: "",
+		name: "Opcion 2",
+	},
+	{
+		icon: "",
+		name: "Opcion 3",
+	},
 ];
 ---
 
@@ -31,52 +32,100 @@ const items = [{
 	</head>
 	<body>
 		<header>Aca va el encabezado</header>
-		<div class="carrousel"> Slider de imagenes </div>
+		<div class="carrousel">Slider de imagenes</div>
 		<nav>
 			{
-				items.map((item) =>
+				items.map((item) => (
 					<a href="#" class="option">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M3 11v8h.051c.245 1.692 1.69 3 3.449 3 1.174 0 2.074-.417 2.672-1.174a3.99 3.99 0 0 0 5.668-.014c.601.762 1.504 1.188 2.66 1.188 1.93 0 3.5-1.57 3.5-3.5V11c0-4.962-4.037-9-9-9s-9 4.038-9 9zm6 1c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2zm6-4c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2z"></path></svg>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"
+						>
+							<path d="M3 11v8h.051c.245 1.692 1.69 3 3.449 3 1.174 0 2.074-.417 2.672-1.174a3.99 3.99 0 0 0 5.668-.014c.601.762 1.504 1.188 2.66 1.188 1.93 0 3.5-1.57 3.5-3.5V11c0-4.962-4.037-9-9-9s-9 4.038-9 9zm6 1c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2zm6-4c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2z" />
+						</svg>
 						{item.name}
 					</a>
-				)
-			}			
+				))
+			}
 		</nav>
 		<div class="grid-container">
-			<div class="area1">Area 1</div>
-			<div class="area2">Area 2</div>
-			<div class="area3">Area 3</div>
-			<div class="area4">Area 4</div>
+			<div class="wrapper">
+				<div class="box img1">img1</div>
+				<div class="box img2">img2</div>
+				<div class="box img3">img3</div>
+				<div class="box img4">img4</div>
+				<div class="box img5">img5</div>
+				<div class="box img6">img6</div>
+				<div class="box img7">img7</div>
+				<div class="box img8">img8</div>
+				<div class="box img9">img9</div>
+				<div class="box img10">img10</div>
+			</div>
 		</div>
 	</body>
 </html>
 <style is:global>
-	.grid-container{
+	.wrapper{
 		display: grid;
-		grid-template-areas: 'area1 area1 area2 area3'
-							 'area1 area1 area4 area4'
-							 'area5 area6 area4 area4';
+		grid-template-rows: 120px 120px 120px 120px;
+		grid-template-areas: "img1 img1 img2 img3"
+							 "img1 img1 img6 img6"
+							 "img4 img5 img6 img6"
+							 "img7 img8 img9 img10"
+		;
 	}
-	.area1{
-		grid-area: area1;
-		background: purple;
-		height: 60px;
+	.box{
+		display: flex;
+		font-family: Verdana;
+		align-items: center;
+		justify-content: center;
+		font-weight: bold;
+		color: white;
 	}
-	.area2{
-		grid-area: area2;
-		background: lightseagreen;
-		height: 60px;
+	.img1{
+		grid-area: img1;
+		background: orange
 	}
-	.area3{
-		grid-area: area3;
-		background: orange;
-		height: 60px;
+	.img2{
+		grid-area: img2;
+		background: black;
 	}
-	.area4{
-		grid-area: area4;
+	.img3{
+		grid-area: img3;
+		background: green
+	}
+	.img4{
+		grid-area: img4;
 		background: wheat;
-		height: 60px;
 	}
+	.img5{
+		grid-area: img5;
+		background: pink;
+	}
+	.img6{
+		grid-area: img6;
+		background: firebrick;
+	}
+	.img7{
+		grid-area: img7;
+		background: blueviolet;
+	}
+	.img8{
+		grid-area: img8;
+		background: blue;
+	}
+	.img9{
+		grid-area: img9;
+		background: khaki;
+	}
+	.img10{
+		grid-area: img10;
+		background: hotpink;
+	}
+
 	.option{
 		text-decoration: none;
 		display: flex;
@@ -128,4 +177,5 @@ const items = [{
 			Courier New,
 			monospace;
 	}
+
 </style>
